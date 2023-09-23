@@ -1,30 +1,89 @@
 <!DOCTYPE html>
-<html>
-    <head>
-
-    </head>
-    <body>
-        <h1>Test Template</h1>
-        <table id="productable">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Test Template</h1>
+    <div class="box-heading box">
+        <h2>Practice content-box</h2>
+    </div>
+    <table id="product-table table">
+        <thead>
+            <tr>
+                <th>Transaction_ID</th>
+                <th>Transaction_Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--initial data or first row is a smoke test-->
+            <!--the rest is to be populated by javascript with sql statement-->
+            <tr>
+                <td>Smoke Test</td>
+                <td>2023-08-30</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="box-table box">
+        <table class="customer-table table">
             <thead>
                 <tr>
-                    <tr>Transaction_ID</tr>
-                    <tr>Transaction_Date</tr>
+                    <th>Customer ID</th>
+                    <th>Customer Last Name</th>
+                    <th>Customer First Name</th>
                 </tr>
             </thead>
             <tbody>
-                <!--to be populated by javascript with sql statement-->
-                <!--another comment-->
+                <!--initial data or first row is a smoke test-->
+                <!--the rest is to be populated by javascript with sql statement-->
+                <tr>
+                    <td>C0000001</td>
+                    <td>Doe</td>
+                    <td>John</td>
+             </tr>
             </tbody>
         </table>
-        <template id="transactionrow">
-            <tr>
-                <td class="record">
-                <td></td>    
-                </td>
-            </tr>
-        </template>
-        <script src="app.js"></script>
-        <noscript>You need to enable javascript</noscript>
-    </body>
+        <table class="address-table table">
+            <thead>
+                <tr>
+                    <th>Address ID</th>
+                    <th>Address 1</th>
+                    <th>Address 2</th>
+                    <th>Address 3</th>
+                    <th>City</th>
+                    <th>State/Province</th>
+                    <th>Country</th>
+                    <th>Zip</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!--initial data or first row is a smoke test-->
+                <!--the rest is to be populated by javascript with sql statement-->
+                <tr>
+                    <td>1</td>
+                    <td>123</td>
+                    <td>Main Street</td>
+                    <td>Uptown</td>
+                    <td>Taguig City</td>
+                    <td>NCR</td>
+                    <td>PH</td>
+                    <td>1111</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    
+    <!-- <template id="transactionrow">
+                <th>
+                    <td class="record"></td>
+                    <td></td>    
+                </th>
+            </template>
+            <script src="app.js"></script>
+            <noscript>You need to enable javascript</noscript> -->
+</body>
 </html>
