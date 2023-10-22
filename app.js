@@ -1,15 +1,30 @@
-// test to see if the browser supports the HTML template element by checking
-// for the presence of the template's element content attribute.
-if ("content" in document.createElement("template")) {   // instantiate the table with the existing HTML tbody
-    // and the row with the template
-    const tbody = document.querySelector("tbody");
-    const template = document.querySelector("#transactionrow");
-    // clone the new row and insert it to the table
-    const clone = template.content.cloneNode(true);
-    let td = clone.querySelectorAll("td");
-    td[0].textContent = "T0009092023001";
-    td[1].textContent = "20230909";
-    tbody.appendChild(clone);
+function logMeIn(u,p)
+   {  
+      var uid = document.getElementById(u).value;
+      var pass = document.getElementById(p).value;
+      var pad = "Database1.accdb";
+      var cn = new ActiveXObject("ADODB.Connection");
+      var connStr = "Provider=microsoft.ace.oledb.12.0;Data Source=" + pad;
+      cn.Open(connStr);
+      var rs = new ActiveXObject("ADODB.Recordset");
+      var sql = "SELECT UserID, Password, FirstName FROM Login WHERE UserID = '" + uid + "' AND Password = '" + pass + "';";
+      rs.Open(sql, cn);
+      if(!rs.bof)
+      {
+         window.alert("Hello " + rs.fields(2).value + "!");
+      }
+      else
+      {  
+         window.alert("Invalid user or password");
+      }
+      rs.Close();
+      cn.Close();
+   }
 
-}
-else {}
+function loginOnKeyPress(e)
+   {  
+      if(e && e.keyCode == 13)
+         {  
+            logMeIn();
+         }
+   }
