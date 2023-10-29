@@ -76,20 +76,21 @@
         </table>
     </div>
     
-    <div class="centered">
-        <form id="frm1">
-  
-            <label for="userid">User Id:</label><br>
-            <input type="text" id="userid" name="udi" placeholder="Your user id..."><br>
-            <label for="pword">Password:</label><br>
-            <input type="password" id="pword" name="pw" placeholder="Your password..."><br>
-            <input type="submit" onclick="logMeIn('userid','pword')" value="Login">
-  
+
+        <h1>Login</h1>
+        <form id="login-form">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br>
+    
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br>
+    
+            <button type="submit">Login</button>
         </form>
-        </div>
-
-
-            <script src="app.js"></script>
-            <noscript>You need to enable javascript</noscript>
+    
+        <div id="message"></div>
+    
+        <script src="app.js"></script>
+    
 </body>
 </html>
